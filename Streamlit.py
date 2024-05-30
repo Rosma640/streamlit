@@ -30,8 +30,7 @@ def labeling(score):
     elif score > 3 :
         return "Positif"
 
-# Function to fetch data from CSV file and preprocess it
-@st.cache_data
+# Function to fetch data from CSV file and preprocess 
 def fetch_data(file):
     data = pd.read_csv(file)
     data.columns = ["content", "score"]
@@ -74,10 +73,10 @@ def stopwordText_ID(text):
     return [word for word in text if word not in daftar_stopword_id]
 
 # English stopwords
-daftar_stopwor_en = stopwords.words("english")
+daftar_stopword_en = stopwords.words("english")
 # Function to remove English stopwords from text
 def stopwordText_EN(text):
-    return [word for word in text if word not in daftar_stopwor_en]
+    return [word for word in text if word not in daftar_stopword_en]
 
 # Creating an instance of Indonesian stemmer
 stemmer_id = StemmerFactory().create_stemmer()
@@ -131,7 +130,7 @@ def home_page():
     st.write("")
     st.write("")
 
-    # Displaying Spotify logo
+    # Spotify logo
     with open("Spotify Logo.svg", "r") as f:
         spotify_logo = f.read()
     st.markdown(f"<div style='text-align:center;'>{spotify_logo}</div>", unsafe_allow_html=True)
