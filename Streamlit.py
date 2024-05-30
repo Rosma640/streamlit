@@ -467,7 +467,7 @@ def prediksi_page():
 
     # Displaying the result
     if error_message:
-        st.error(error_message, icon="🚨")
+        st.error(error_message)
     elif result is not None:
         st.info(f"Ulasan tersebut {result.upper()} dengan probabilitas {(probability * 100):.2f}%")
 
