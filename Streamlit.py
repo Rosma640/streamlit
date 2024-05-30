@@ -440,11 +440,11 @@ def prediksi_page():
             # Validating input fields
             if not language or language == "":
                 if not text_input:
-                    error_message = "Pilih bahasa dan masukkan teks ulasan terlebih dahulu"
+                    error_message = "Pilih bahasa dan input teks ulasan"
                 else:
-                    error_message = "Pilih bahasa terlebih dahulu"
+                    error_message = "Pilih bahasa"
             elif not text_input:
-                error_message = "Masukkan teks ulasan terlebih dahulu"
+                error_message = "Input teks ulasan"
             else:
                 # Loading the appropriate model and vectorizer based on the selected language
                 if language == "🇮🇩 ID":
